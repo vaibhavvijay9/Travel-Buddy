@@ -1,4 +1,4 @@
-body {
+.home-page {
   background: url("../images/1.jpg") no-repeat center center fixed;
   background-size: cover;
 }
@@ -46,7 +46,7 @@ nav i {
   font-size: 1.7rem !important;
 }
 
-form {
+.search-form {
   display: flex;
 }
 
@@ -56,4 +56,29 @@ form {
   width: 100px;
   border-bottom-right-radius: 300px;
   border-top-right-radius: 300px;
+}
+
+.login-background {
+  background: #f8eadd;
+}
+
+.login-page {
+  margin-top: 12.5vh !important;
+  margin: 0 auto 0 auto;
+  width: 30vw;
+  height: 70vh;
+  background: #fafafa;
+}
+
+.signup-page {
+  margin-top: 12.5vh !important;
+  margin: 0 auto 0 auto;
+  width: 30vw;
+  min-height: 70vh;
+  background: #fafafa;
+}
+
+.signup-button {
+  width: 100%;
+  margin-bottom: 10px;
 }

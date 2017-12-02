@@ -52,7 +52,6 @@ DROP TABLE IF EXISTS `guides`;
 CREATE TABLE `guides` (
   `guide_id` varchar(50) default NULL,
   `guide_name` varchar(50) default NULL,
-  `guide_contact` varchar(10) default NULL,
   `guide_avail` varchar(1) default NULL,
   `city_id` int(4) default NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -71,18 +70,20 @@ CREATE TABLE `login` (
 
 /*Data for the table `login` */
 
+insert  into `login`(`username`,`password`,`usertype`) values ('vaibhavvijay9@gmail.com','12345678','tourist');
+
 /*Table structure for table `tourists` */
 
 DROP TABLE IF EXISTS `tourists`;
 
 CREATE TABLE `tourists` (
   `tourist_id` varchar(50) default NULL,
-  `tourist_name` varchar(50) default NULL,
-  `tourist_contact` varchar(50) default NULL,
-  `tourist_country` varchar(20) default NULL
+  `tourist_name` varchar(50) default NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tourists` */
+
+insert  into `tourists`(`tourist_id`,`tourist_name`) values ('vaibhavvijay9@gmail.com','vaibhav vijay');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

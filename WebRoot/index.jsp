@@ -1,14 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ page import="package1.DBInfo" %>
-	<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-		<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -18,24 +8,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel='stylesheet' href='css/style.min.css '>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
     <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
-
 </head>
 
-<body>
-    <nav class="z-depth-0">
-        <a href="login.jsp">
-            <i class="fa fa-sign-in" aria-hidden="true"></i>
-            login</a>
-    </nav>
-    <div class="rest-body">
-        <h3>Search for Places in Rajasthan</h3>
-        <div class="search-bar">
-            <div class="input-field">
-                <form action="login.jsp" method="post">
-                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete" name="city" required>
-                    <button class="waves-effect waves-light btn submit-button">Search</button>
-                </form>
-            </div>
+<body class="login-background">
+<!-- login failed message  -->
+    <%
+       if(null!=request.getAttribute("SignInMessage"))
+       {
+    %>
+       <div class="success-message">
+           <%=request.getAttribute("SignInMessage")%>
+       </div>
+    <%
+	   }
+    %>
+    <div class="login-page z-depth-5">
+        <div class="row">
+            <form class="col s12" action="loginDone.jsp" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="email" name="username" class="validate" required>
+                        <label for="username">User ID</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name="password" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn login-button">Login</button>
+                <p>Need an account?</p>
+                <a href="signup.jsp">Sign Up</a>
+            </form>
         </div>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
