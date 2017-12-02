@@ -1,4 +1,6 @@
-.home-page{background:url("../images/1.jpg") no-repeat center center fixed;background-size:cover}nav{background:-webkit-linear-gradient(top, rgba(0,0,0,0.6) 0, transparent 100%);display:flex;flex-direction:row-reverse;border-bottom:none}nav a{margin-right:7vw}nav a:hover{text-decoration:underline}nav i{line-height:53px !important}.rest-body{text-align:center;margin-top:150px !important}.rest-body h3{color:#ffffff}.search-bar{width:50vw;margin:0 auto 0 auto;background:#ffffff;text-decoration:none !important;height:7vh;border-radius:300px}.search-bar input{border-bottom:none !important;text-align:center;font-size:1.7rem !important}.search-form{display:flex}.submit-button{height:7vh;background:#d98d45;width:100px;border-bottom-right-radius:300px;border-top-right-radius:300px}.login-background{background:#f8eadd}.login-page{margin-top:12.5vh !important;margin:0 auto 0 auto;width:30vw;height:70vh;background:#fafafa}.signup-page{margin-top:12.5vh !important;margin:0 auto 0 auto;width:30vw;min-height:70vh;background:#fafafa}.signup-button{width:100%;margin-bottom:10px}
+.home-page{background:url("../images/1.jpg") no-repeat center center fixed;background-size:cover}nav{background:-webkit-linear-gradient(top, rgba(0,0,0,0.6) 0, transparent 100%);display:flex;flex-direction:row-reverse;border-bottom:none}nav a{margin-right:7vw}nav a:hover{text-decoration:underline}nav i{line-height:53px !important}.rest-body{text-align:center;margin-top:150px !important}.rest-body h3{color:#ffffff}.search-bar{width:50vw;margin:0 auto 0 auto;background:#ffffff;text-decoration:none !important;height:7vh;border-radius:300px}.search-bar input{border-bottom:none !important;text-align:center;font-size:1.7rem !important}.search-form{display:flex}.submit-button{height:7vh;background:#d98d45;width:100px;border-bottom-right-radius:300px;border-top-right-radius:300px}
+.login-background{	background:url("../images/2.jpg") no-repeat center center fixed;
+	background-size:cover;}.login-page{margin-top:12.5vh !important;margin:0 auto 0 auto;width:30vw;height:70vh;background:#fafafa}.signup-page{margin-top:12.5vh !important;margin:0 auto 0 auto;width:30vw;min-height:70vh;background:#fafafa}.signup-button{width:100%;margin-bottom:10px}
 .guide-row{
 	display:flex;
 	flex:3;
@@ -24,4 +26,7 @@ padding:10px;
 }
 .hire-me-btn{
 margin-left:87px;
+}
+.login-background{
+
 }

@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDateTime"%>
 <%@page import="package1.Checksum"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Vector"%>
@@ -66,11 +68,10 @@
 		{
 			e.printStackTrace();
 		}
-			
      %>
         <div>
             <h4 class="center">Booking Details</h4>
-            <form class="col s12" action="emitralink.jsp" method="post">
+            <form class="col s12" action="http://uat.rpp.rajasthan.gov.in/payments/v1/init" method="post">
             <table class="table-width">
                 <tr>
                     <td class="firstCol">Guide Name</td>
@@ -88,12 +89,27 @@
                     <td class="firstCol">Amount</td>
                     <td><input class="inputHeight" value="<%=amount%>" type="text" readonly></td>
                 </tr>
-       			<tr>
-       				<td></td>
-       				<td><input type="submit" value="Proceed To Pay"></td>
-       			</tr>	         
+       			        
             </table>
-       </form>
+			            
+			<input type="hidden" name="MERCHANTCODE" value="HACKATHON2017" />
+			<input type="hidden" name="PRN" value="<%=PRN %>" />
+			<input type="hidden" name="REQTIMESTAMP" value="<%= LocalDateTime.now()
+				    	       .format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS"))%>" />
+			<input type="hidden" name="PURPOSE" value="GuideBooking" />
+			<input type="hidden" name="AMOUNT" value="<%=amount %>" />
+			<input type="hidden" name="SUCCESSURL" value="http://localhost:8080/RoyalGuides/Response.jsp" />
+			<input type="hidden" name="FAILUREURL" value="http://localhost:8080/RoyalGuides/Response.jsp" />
+			<input type="hidden" name="CANCELURL" value="http://localhost:8080/RoyalGuides/Response.jsp" />
+			<input type="hidden" name="USERNAME" value="<%="demo"%>" />
+			<input type="hidden" name="USERMOBILE" value="<%=String.valueOf("9985474855") %>" />
+			<input type="hidden" name="USEREMAIL" value="<%=tourist_id  %>" />
+			<input type="hidden" name="UDF1" value="" />
+			<input type="hidden" name="UDF2" value="" />
+			<input type="hidden" name="UDF3" value="" />
+			<input type="hidden" name="CHECKSUM" value="<%=checksum1 %>" />
+			<button type="submit">Proceed To Pay</button>
+			</form>
     
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
