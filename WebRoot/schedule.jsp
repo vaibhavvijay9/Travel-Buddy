@@ -11,7 +11,7 @@
     <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
 </head>
 
-<body class="login-background">
+<body class="home-page">
 <nav class="z-depth-0">
         <a href="logout.jsp">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -20,11 +20,14 @@
     <%
    	session.setAttribute("journey_city", request.getParameter("city")); 
      %>
-    <div class="login-page z-depth-5">
-        <div class="row">
+    <div class="trip-schedule z-depth-5">
+        <div class="row trip-details">
+        <h4 class="center">Trip Details</h4>
             <form class="col s12" action="getguides.jsp" method="post">
                 <div class="row">
                     <div class="input-field col s12">
+                    <i class="material-icons prefix">location_on</i>
+                    
                         <input id="Place" type="text" name="city" value=<%=request.getParameter("city")%> class="validate" readonly>
                     </div>
                 </div>

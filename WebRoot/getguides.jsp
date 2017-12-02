@@ -16,7 +16,7 @@
     <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
 </head>
 
-<body class="login-background">
+<body class="home-page">
 <nav class="z-depth-0">
         <a href="logout.jsp">
             <i class="fa fa-sign-out" aria-hidden="true"></i>

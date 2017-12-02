@@ -19,7 +19,7 @@
     <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
 </head>
 
-<body class="login-background">
+<body class="home-page">
 <nav class="z-depth-0">
         <a href="logout.jsp">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -69,7 +69,7 @@
 			e.printStackTrace();
 		}
      %>
-        <div>
+        <div class=" container hire-form">
             <h4 class="center">Booking Details</h4>
             <form class="col s12" action="http://uat.rpp.rajasthan.gov.in/payments/v1/init" method="post">
             <table class="table-width">
@@ -108,7 +108,7 @@
 			<input type="hidden" name="UDF2" value="" />
 			<input type="hidden" name="UDF3" value="" />
 			<input type="hidden" name="CHECKSUM" value="<%=checksum1 %>" />
-			<button type="submit">Proceed To Pay</button>
+			<button type="submit" class="waves-effect waves-light btn hire-me-btn right">Proceed To Pay</button>
 			</form>
     
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
