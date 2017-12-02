@@ -6,4 +6,13 @@ $(document).ready(function() {
       "Mount Abu": null
     }
   });
+  $("input:radio").click(function() {
+    if ($(".guide").is(":checked")) {
+      $("#guide").show();
+    } else {
+      $("#guide").hide();
+    }
+  });
+  $("#guide").hide();
+  $("select").select();
 });
