@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="package1.DBInfo"%>
 <%@page import="java.sql.Connection"%>
@@ -8,7 +9,10 @@
 	String email=request.getParameter("email");
 	String password=request.getParameter("password");
 	String usertype=request.getParameter("group3");
+	
 	int t_flag=0,t_flag1=0;
+    int city_id=0;
+	session.setAttribute("city_id",city_id);
 	
 	if(usertype.equalsIgnoreCase("tourist"))
 	{
@@ -39,6 +43,25 @@
 	if(usertype.equalsIgnoreCase("guide"))
 	{
 		String city=request.getParameter("guide_city");
+		String query0="select city_id from cities where city_name=?";
+		try
+		{
+			Connection con=DBInfo.getConn();	
+			PreparedStatement ps0=con.prepareStatement(query0);
+			ps0.setString(1, city);
+			ResultSet res0=ps0.executeQuery();
+			while(res0.next())
+			{
+				city_id=res0.getInt(1);
+			}
+			con.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
 		String query="insert into guides values(?,?,?,?)";
 		String query1="insert into login values(?,?,?)";
 		try
@@ -48,7 +71,7 @@
 			ps.setString(1, email);
 			ps.setString(2, name);
 			ps.setString(3, "Y");
-			ps.setString(4, city);
+			ps.setInt(4, city_id);
 			t_flag=ps.executeUpdate();
 			
 			PreparedStatement ps1=con.prepareStatement(query1);

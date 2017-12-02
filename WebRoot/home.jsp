@@ -13,7 +13,7 @@
 
 <body class="home-page">
     <nav class="z-depth-0">
-        <a href="login.jsp">
+        <a href="logout.jsp">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
             logout</a>
     </nav>
@@ -21,7 +21,7 @@
         <h3>Search for Places in Rajasthan</h3>
         <div class="search-bar">
             <div class="input-field">
-                <form action="login.jsp" method="post" class="search-form">
+                <form action="schedule.jsp" method="post" class="search-form">
                     <input type="text" placeholder="Search..." id="autocomplete-input" class="autocomplete" name="city" required>
                     <button class="waves-effect waves-light btn submit-button">
                         <i class="fa fa-search" aria-hidden="true"></i>

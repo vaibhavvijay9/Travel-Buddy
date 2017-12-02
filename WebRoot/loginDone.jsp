@@ -24,7 +24,6 @@
    		{
 	    	if(usertype.equalsIgnoreCase("tourist"))
 	    	{
-	    		
 	    		response.sendRedirect("/RoyalGuides/home.jsp");
 	    		session.setAttribute("username",username);
 	    	}
