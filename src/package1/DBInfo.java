@@ -1,6 +1,8 @@
 package package1;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Vector;
 public class DBInfo
 {
     public static Connection con;
@@ -37,6 +39,27 @@ public class DBInfo
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	public static Vector<String> getCities()
+	{
+		Vector<String> city_list = new Vector<String>();
+		try
+		{
+			Connection con=DBInfo.getConn();
+			PreparedStatement ps=con.prepareStatement("select city_name from cities");
+			ResultSet res=ps.executeQuery();
+			while(res.next())
+			{
+				city_list.add(res.getString(1));
+			}
+			con.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return city_list;
 	}
 	
 }

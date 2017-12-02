@@ -1,18 +1,18 @@
 $(document).ready(function() {
-  $(".autocomplete").autocomplete({
-    data: {
+  $(".autocomplete").autocomplete({	   
+	  data: {
       Jaipur: null,
       Udaipur: null,
-      "Mount Abu": null
+      Jodhpur: null,
+      Ajmer: null,
+      Bikaner: null,
+      Pushkar: null,
+      Kota: null,
+      Jaisalmer: null,
+      Chittorgarh: null,
+      Bundi: null,
+      Jhalawar: null,
+      Bhilwara: null
     }
   });
-  $("input:radio").click(function() {
-    if ($(".guide").is(":checked")) {
-      $("#guide").show();
-    } else {
-      $("#guide").hide();
-    }
-  });
-  $("#guide").hide();
-  $("select").select();
 });

@@ -1,4 +1,4 @@
-.home-page {
+body {
   background: url("../images/1.jpg") no-repeat center center fixed;
   background-size: cover;
 }
@@ -41,7 +41,7 @@ nav {
   height: 7vh;
   border-radius: 300px;
 }
-.search-form {
+form {
   display: flex;
 }
 .submit-button {
@@ -50,26 +50,4 @@ nav {
   width: 100px;
   border-bottom-right-radius: 300px;
   border-top-right-radius: 300px;
-}
-.login-background {
-  background: #f8eadd;
-}
-.login-page {
-  margin-top: 12.5vh !important;
-  margin: 0 auto 0 auto;
-  width: 30vw;
-  height: 70vh;
-  background: #fafafa;
-  // opacity: 0.8;
-}
-.signup-page {
-  margin-top: 12.5vh !important;
-  margin: 0 auto 0 auto;
-  width: 30vw;
-  min-height: 70vh;
-  background: #fafafa;
-}
-.signup-button {
-  width: 100%;
-  margin-bottom: 10px;
 }

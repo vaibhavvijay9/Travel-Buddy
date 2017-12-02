@@ -29,23 +29,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </nav>
     <div class="rest-body">
         <h3>Search for Places in Rajasthan</h3>
-        <%
-        	Connection con=DBInfo.getConn();	
-			
-			PreparedStatement ps=con.prepareStatement("select city_name from cities");
-			ResultSet res=ps.executeQuery();
-			ArrayList<String> city_list = new ArrayList<String> ();
-			while(res.next())
-			{
-				city_list.add(res.getString(1));
-			}
-			
-			con.close();
-         %>
         <div class="search-bar">
             <div class="input-field">
-                <form action="login.html">
-                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete">
+                <form action="login.jsp" method="post">
+                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete" name="city" required>
                     <button class="waves-effect waves-light btn submit-button">Search</button>
                 </form>
             </div>
