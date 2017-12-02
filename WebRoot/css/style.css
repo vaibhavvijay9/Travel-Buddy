@@ -37,10 +37,13 @@ nav i {
   background: #ffffff;
   text-decoration: none !important;
   height: 7vh;
+  border-radius: 300px;
 }
 
 .search-bar input {
   border-bottom: none !important;
+  text-align: center;
+  font-size: 1.7rem !important;
 }
 
 form {
@@ -50,4 +53,7 @@ form {
 .submit-button {
   height: 7vh;
   background: #d98d45;
+  width: 100px;
+  border-bottom-right-radius: 300px;
+  border-top-right-radius: 300px;
 }
