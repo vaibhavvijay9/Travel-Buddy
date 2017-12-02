@@ -1,4 +1,14 @@
-<!DOCTYPE HTML>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page import="package1.DBInfo" %>
+	<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+		<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -22,10 +32,8 @@
         <div class="search-bar">
             <div class="input-field">
                 <form action="login.jsp" method="post">
-                    <input type="text" placeholder="Search..." id="autocomplete-input" class="autocomplete"  name="city" required>
-                    <button class="waves-effect waves-light btn submit-button">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete" name="city" required>
+                    <button class="waves-effect waves-light btn submit-button">Search</button>
                 </form>
             </div>
         </div>
