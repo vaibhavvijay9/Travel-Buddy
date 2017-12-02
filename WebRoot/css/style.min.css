@@ -9,16 +9,19 @@
 	}
 .guide-row .card{
 	width:30%;
-	height:40vh;
+	max-height:40vh;
 	margin:2vw;
 }
 .img-circle{
 	border-radius:100% !important;
-	height:100px;
-	width:100px !important;
+	height:150px;
+	width:150px !important;
 margin:0 auto 0 auto;
 padding:10px;
 }
 .guide-name{
 	text-align: center;
+}
+.hire-me-btn{
+margin-left:87px;
 }

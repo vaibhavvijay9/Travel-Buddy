@@ -6,14 +6,16 @@
 	String fname=request.getParameter("fname");
 	String lname=request.getParameter("lname");
 	String name=fname+" "+lname;
-	String email=request.getParameter("email");
+	String email=request.getParameter("username");
 	String password=request.getParameter("password");
 	String usertype=request.getParameter("group3");
 	
 	int t_flag=0,t_flag1=0;
     int city_id=0;
 	session.setAttribute("city_id",city_id);
+	session.setAttribute("sessionId", email);
 	
+	System.out.println(session.getAttribute("sessionId"));
 	if(usertype.equalsIgnoreCase("tourist"))
 	{
 		String query="insert into tourists values(?,?)";

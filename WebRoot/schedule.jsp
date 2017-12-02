@@ -4,7 +4,8 @@
 <head>
     <title>Travel Buddy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    
     <link rel='stylesheet' href='css/style.min.css '>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
     <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
@@ -16,6 +17,9 @@
             <i class="fa fa-sign-out" aria-hidden="true"></i>
             logout</a>
     </nav>
+    <%
+   	session.setAttribute("journey_city", request.getParameter("city")); 
+     %>
     <div class="login-page z-depth-5">
         <div class="row">
             <form class="col s12" action="getguides.jsp" method="post">
@@ -37,7 +41,7 @@
         </div>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src='js/index.js'></script>
 </body>
 
