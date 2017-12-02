@@ -43,6 +43,8 @@ CREATE TABLE `cities` (
 
 /*Data for the table `cities` */
 
+insert  into `cities`(`city_id`,`city_name`) values (1,'Jaipur'),(2,'Udaipur'),(3,'Jodhpur'),(4,'Ajmer'),(5,'Bikaner'),(6,'Pushkar'),(7,'Kota'),(8,'Jaisalmer'),(9,'Chittorgarh'),(10,'Bundi'),(11,'Jhalawar'),(12,'Bhilwara');
+
 /*Table structure for table `guides` */
 
 DROP TABLE IF EXISTS `guides`;

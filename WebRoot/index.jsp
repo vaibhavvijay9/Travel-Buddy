@@ -1,35 +1,59 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page import="package1.DBInfo" %>
 	<%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-		<html>
+		<!DOCTYPE HTML>
+<html>
 
-		<head>
-			<base href="<%=basePath%>">
-
-			<title>My JSP 'index.jsp' starting page</title>
-			<meta http-equiv="pragma" content="no-cache">
-			<meta http-equiv="cache-control" content="no-cache">
-			<meta http-equiv="expires" content="0">
-			<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-			<meta http-equiv="description" content="This is my page">
-
-    <link rel='stylesheet' href='css/font-awesome-4.7.0/css/font-awesome.min.css '>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
-
+<head>
+    <title>Travel Buddy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
     <link rel='stylesheet' href='css/style.min.css '>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
 
-		</head>
+</head>
 
-		<body>
-			This is my JSP page.
-			<br>
-			<script src='js/jquery-3.2.1.min.js'></script>
+<body>
+    <nav class="z-depth-0">
+        <a href="login.jsp">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            login</a>
+    </nav>
+    <div class="rest-body">
+        <h3>Search for Places in Rajasthan</h3>
+        <%
+        	Connection con=DBInfo.getConn();	
+			
+			PreparedStatement ps=con.prepareStatement("select city_name from cities");
+			ResultSet res=ps.executeQuery();
+			ArrayList<String> city_list = new ArrayList<String> ();
+			while(res.next())
+			{
+				city_list.add(res.getString(1));
+			}
+			
+			con.close();
+         %>
+        <div class="search-bar">
+            <div class="input-field">
+                <form action="login.html">
+                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete">
+                    <button class="waves-effect waves-light btn submit-button">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
-			<script src='js/index.js'></script>
-			< /body>
+    <script src='js/index.js'></script>
+</body>
 
-				< /html>
+</html>
