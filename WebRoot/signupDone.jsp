@@ -6,7 +6,7 @@
 	String fname=request.getParameter("fname");
 	String lname=request.getParameter("lname");
 	String name=fname+" "+lname;
-	String email=request.getParameter("username");
+	String email=request.getParameter("email");
 	String password=request.getParameter("password");
 	String usertype=request.getParameter("group3");
 	

@@ -14,8 +14,14 @@
     <script src="https://use.fontawesome.com/a2fcb19453.js"></script>
 </head>
 
-<body class="login-background">
+<body class="login-page-background">
 <!-- registration successful message  -->
+<nav class="z-depth-0">
+        <a href="logout.jsp">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            logout</a>
+    </nav>
+
     <%
        if(null!=request.getAttribute("SignSuccessMessage"))
        {
@@ -27,6 +33,7 @@
 	   }
     %>
     <div class="signup-page z-depth-5">
+    <h4 class="center">Sign Up</h4>
         <div class="row">
             <form class="col s12" action="signupDone.jsp" method="post"  name="registerForm" onsubmit="return validate()">
                 <div class="row">
